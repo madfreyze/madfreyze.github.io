@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奉行 - 个人与团队执行策略与行动指南</title>
+    <meta name="description" content="奉行网提供关于执行策略、行动计划、目标管理与自律习惯的深度指南。帮助个人提升执行力，帮助团队优化工作流程，实现高效落地与结果导向。">
+    <meta name="keywords" content="奉行,执行力,行动指南,目标管理,时间管理,工作流,效率提升">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d35400;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Core Concept Section */
+        .concept {
+            padding: 5rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .concept-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .concept-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .concept-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .check-icon {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        .concept-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Methodology Section */
+        .methodology {
+            padding: 5rem 0;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .method-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .method-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .method-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Application Section */
+        .application {
+            padding: 5rem 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .application .section-title h2 {
+            color: white;
+        }
+
+        .application .section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .app-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .app-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .app-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .icon-plus {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">奉行<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#concept" class="active">核心概念</a></li>
+                    <li><a href="#method">执行方法</a></li>
+                    <li><a href="#application">应用场景</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#faq" class="cta-button">开始践行</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>拒绝空谈，<br>从“奉行”开始行动</h1>
+                <p>在充满变数的时代，执行力是核心竞争力。奉行不仅是一种态度，更是一套科学的行动方法论。我们帮助个人与团队将想法转化为现实。</p>
+                <div class="hero-buttons">
+                    <a href="#method" class="cta-button">探索方法</a>
+                    <a href="#concept" class="btn-outline">了解理念</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concept Section -->
+        <section id="concept" class="concept">
+            <div class="container">
+                <div class="concept-grid">
+                    <div class="concept-content">
+                        <h3>什么是“奉行”？</h3>
+                        <p>“奉行”在传统语境中指代奉命行事，但在现代管理学与个人成长领域，它代表了一种<strong>深度承诺与坚决执行</strong>的精神。它意味着不仅接受任务，更将任务内化为自身的行为准则。</p>
+                        <p>真正的奉行，是知行合一的体现。它要求我们在面对困难时保持韧性，在面临诱惑时坚守初心，通过持续的、一致的行动来积累复利效应。</p>
+                        <ul class="concept-list">
+                            <li><span class="check-icon">✓</span> <strong>承诺导向：</strong>一旦决定，全力以赴，不找借口。</li>
+                            <li><span class="check-icon">✓</span> <strong>结果导向：</strong>关注最终产出，而非过程表演。</li>
+                            <li><span class="check-icon">✓</span> <strong>复盘迭代：</strong>在执行中不断优化，而非盲目坚持。</li>
+                        </ul>
+                    </div>
+                    <div class="concept-image">
+                        <!-- Using a placeholder that represents structure/order -->
+                        <img src="https://picsum.photos/seed/executive/600/400.jpg" alt="执行力与行动结构示意图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section id="method" class="methodology">
+            <div class="container">
+                <div class="section-title">
+                    <h2>三大奉行法则</h2>
+                    <p>科学的方法论是高效奉行的基石</p>
+                </div>
+                <div class="method-grid">
+                    <article class="method-card">
+                        <span class="method-icon">🎯</span>
+                        <h3>目标聚焦</h3>
+                        <p>奉行不等于盲目忙碌。我们主张将精力集中在少数核心目标上。通过拆解目标，将宏大愿景转化为每天可执行的具体动作，确保每一分投入都有明确的方向。</p>
+                    </article>
+                    <article class="method-card">
+                        <span class="method-icon">⏱️</span>
+                        <h3>时间切片</h3>
+                        <p>将时间视为最稀缺的资源。采用“番茄工作法”或深度工作模式，通过高强度、短周期的专注执行，避免精力分散，提升单次执行的质量与深度。</p>
+                    </article>
+                    <article class="method-card">
+                        <span class="method-icon">🔄</span>
+                        <h3>闭环反馈</h3>
+                        <p>任何行动都需要反馈。建立定期的复盘机制，检查执行偏差，分析原因，并迅速调整策略。只有形成闭环，奉行才能从“苦干”进化为“巧干”。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Section -->
+        <section id="application" class="application">
+            <div class="container">
+                <div class="section-title">
+                    <h2>适用场景</h2>
+                    <p>无论身处何种环境，奉行都能助你突破瓶颈</p>
+                </div>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <h4>个人自我提升</h4>
+                        <p>通过每日打卡、习惯养成，将阅读、健身、学习等目标内化为日常奉行的一部分，重塑个人生活秩序。</p>
+                    </div>
+                    <div class="app-card">
+                        <h4>团队项目管理</h4>
+                        <p>在敏捷开发与任务管理中，强调对承诺的履行。通过清晰的Sprint规划与每日站会，确保团队目标一致，高效交付。</p>
+                    </div>
+                    <div class="app-card">
+                        <h4>职场沟通协作</h4>
+                        <p>在跨部门协作中，奉行意味着响应及时、反馈透明、结果可靠。建立信任的职场人设，提升个人影响力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                    <p>关于“奉行”理念的解答</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            奉行是否意味着不能变通？
+                            <span class="icon-plus">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>奉行强调的是对目标的坚定承诺和对行动的严格执行。但这并不排斥灵活变通。在执行过程中，如果发现路径受阻或环境变化，应及时复盘并调整策略，而不是放弃目标。真正的奉行是“目标不变，手段灵活”。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            如何克服执行中的拖延症？
+                            <span class="icon-plus">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>拖延往往源于任务过大或恐惧失败。建议采用“微习惯”策略，将任务拆解到“不可能拒绝”的程度。同时，利用环境约束和即时奖励机制，强迫自己开始行动。一旦开始，惯性会帮助你继续前行。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            个人和团队奉行有什么区别？
+                            <span class="icon-plus">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>个人奉行更侧重于自律与自我管理，关注的是个人习惯的养成和时间的利用率；而团队奉行则侧重于协同与责任，关注的是对承诺的兑现、沟通的透明度以及对集体目标的共同维护。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display:inline-block;">奉行<span>.</span></a>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">致力于传播高效行动理念，帮助每一个渴望改变的人，通过科学的执行策略，实现人生价值的跃升。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>核心内容</h5>
+                    <ul>
+                        <li><a href="#">执行力训练</a></li>
+                        <li><a href="#">目标管理</a></li>
+                        <li><a href="#">时间管理</a></li>
+                        <li><a href="#">效率工具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>资源链接</h5>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>订阅更新</h5>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">获取最新的行动指南与技巧。</p>
+                    <div style="display: flex;">
+                        <input type="email" placeholder="您的邮箱" style="padding: 0.5rem; border-radius: 4px 0 0 4px; border: none; width: 100%;">
+                        <button style="padding: 0.5rem 1rem; background-color: var(--accent-color); border: none; color: white; border-radius: 0 4px 4px 0; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 奉行指南网 版权所有.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
