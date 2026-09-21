@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="火苗广场舞16步是近年来流行的高人气广场舞步，节奏欢快，动作简单易学。本站提供火苗广场舞16步的教学视频、分解动作图解、背景音乐下载及舞队活动信息。">
+    <meta name="keywords" content="火苗广场舞16步,广场舞教学,火苗舞,16步舞,广场舞音乐,广场舞视频">
+    <title>火苗广场舞16步-热门教学与舞步解析指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #f1faee;
+            --accent-color: #a8dadc;
+            --text-dark: #1d3557;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --gray-light: #e9ecef;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #ff6b6b);
+            color: var(--white);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Video Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+        }
+
+        .play-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .music-list {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .music-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .music-item:last-child {
+            border-bottom: none;
+        }
+
+        .music-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .music-info span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .download-btn {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tips-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🔥</span> 火苗广场舞16步
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">首页</a></li>
+                    <li><a href="#video">教学视频</a></li>
+                    <li><a href="#steps">分解动作</a></li>
+                    <li><a href="#music">背景音乐</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <h1>火苗广场舞16步<br>简单易学，活力四射</h1>
+        <p>最新版火苗广场舞教学，专为中老年舞友设计。节奏欢快，动作整齐，轻松掌握广场舞新潮流。</p>
+        <a href="#video" class="cta-button">立即观看教学</a>
+    </section>
+
+    <div class="container">
+        <main>
+            <!-- 视频教学区 -->
+            <section id="video">
+                <div class="section-title">
+                    <h2>精选教学视频</h2>
+                </div>
+                <article class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <div class="play-icon">▶</div>
+                            <h3>火苗广场舞16步 完整教学版</h3>
+                            <p>点击播放高清教学视频</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">火苗广场舞16步：标准动作全解析</h3>
+                        <div class="video-meta">
+                            <span>⏱ 05:32</span>
+                            <span>👁 12.5万 次播放</span>
+                            <span>👍 赞 3,402</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <div class="play-icon">▶</div>
+                            <h3>火苗广场舞16步：慢动作分解</h3>
+                            <p>适合初学者跟练</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">火苗广场舞16步：慢动作教学</h3>
+                        <div class="video-meta">
+                            <span>⏱ 08:15</span>
+                            <span>👁 8,900 次播放</span>
+                            <span>👍 赞 1,205</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 动作分解区 -->
+            <section id="steps">
+                <div class="section-title">
+                    <h2>动作分解步骤</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>起势与准备</h3>
+                            <p>双脚并拢，双手自然下垂，保持身体重心平稳，准备跟随音乐节奏。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>踏步向前</h3>
+                            <p>左脚向左前方迈出一小步，右脚跟随并拢，双臂随身体摆动。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>侧步转身</h3>
+                            <p>右脚向右侧跨出，身体随之转动，左手划弧至胸前，右手后摆。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>踢腿动作</h3>
+                            <p>左腿向侧面踢起，脚尖绷直，双手举过头顶，展现舞姿。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>下蹲回位</h3>
+                            <p>身体下蹲，双脚并拢，双手扶膝或自然下垂，随后迅速站起。</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>收尾定格</h3>
+                            <p>还原至起势位置，调整呼吸，保持微笑，完成一个八拍循环。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 注意事项 -->
+            <section class="tips-section">
+                <div class="section-title">
+                    <h2>舞步练习建议</h2>
+                </div>
+                <ul class="tips-list">
+                    <li>初学者建议先跟着慢动作视频练习，熟悉节奏后再跟原速视频。</li>
+                    <li>注意膝盖的缓冲，下蹲时不要过度弯曲，避免损伤关节。</li>
+                    <li>保持呼吸顺畅，动作幅度适中，不要追求过快速度导致动作变形。</li>
+                    <li>穿着宽松舒适的运动服装和防滑运动鞋，确保练习安全。</li>
+                    <li>建议每天练习15-20分钟，循序渐进，效果更佳。</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <!-- 背景音乐区 -->
+            <section id="music">
+                <div class="section-title">
+                    <h2>推荐背景音乐</h2>
+                </div>
+                <div class="music-list">
+                    <div class="music-item">
+                        <div class="music-info">
+                            <h4>火苗广场舞专用曲</h4>
+                            <span>4:32 / 4.2MB</span>
+                        </div>
+                        <a href="#" class="download-btn">下载</a>
+                    </div>
+                    <div class="music-item">
+                        <div class="music-info">
+                            <h4>动感节奏版</h4>
+                            <span>4:15 / 3.8MB</span>
+                        </div>
+                        <a href="#" class="download-btn">下载</a>
+                    </div>
+                    <div class="music-item">
+                        <div class="music-info">
+                            <h4>慢速练习版</h4>
+                            <span>4:32 / 3.5MB</span>
+                        </div>
+                        <a href="#" class="download-btn">下载</a>
+                    </div>
+                    <div class="music-item">
+                        <div class="music-info">
+                            <h4>高清伴奏版</h4>
+                            <span>4:30 / 5.1MB</span>
+                        </div>
+                        <a href="#" class="download-btn">下载</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 常见问题 -->
+            <section class="tips-section">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div style="font-size: 0.95rem; color: var(--text-dark);">
+                    <p style="margin-bottom: 0.8rem;"><strong>Q：火苗广场舞16步适合多大年纪？</strong><br>A：该舞步动作幅度适中，节奏清晰，非常适合中老年朋友锻炼身体。</p>
+                    <p><strong>Q：没有舞蹈基础能学会吗？</strong><br>A：可以。只要跟随视频慢速练习，多重复几次，通常一周内就能掌握基本步法。</p>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>本站提供火苗广场舞16步教学资源，旨在推广健康快乐的广场舞文化。</p>
+            <p>Copyright © 2023 火苗广场舞16步教学网 | 仅供学习交流使用</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
