@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产大英雄专题站，收录中国神话英雄、历史名将、现代英雄人物及国产动漫影视作品中的英雄形象。提供人物生平、经典事迹、英雄精神解读及相关文化内容。">
+    <meta name="keywords" content="国产大英雄, 中国英雄, 神话传说, 历史名将, 动漫英雄, 文化传承">
+    <title>国产大英雄-中国英雄人物与神话传说文化专题</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 4px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .header-cta:hover {
+            background-color: #a93226;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/seed/hero_china/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
+        }
+
+        .hero-btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Hero Spotlight Section */
+        .spotlight-section {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .spotlight-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .spotlight-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .spotlight-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .spotlight-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .spotlight-tag {
+            display: inline-block;
+            background-color: rgba(192, 57, 43, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .spotlight-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .spotlight-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .spotlight-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 25px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Content Grid (Articles/Features) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover .feature-img img {
+            transform: scale(1.1);
+        }
+
+        .feature-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-meta {
+            font-size: 12px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .feature-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .feature-link:hover {
+            color: #a93226;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .quote-section blockquote {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-style: normal;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--secondary-color);
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f1f1;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .spotlight-section {
+                flex-direction: column;
+            }
+            
+            .spotlight-image {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🛡️ 国产<span>大英雄</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#myth">神话传说</a></li>
+                    <li><a href="#history">历史名将</a></li>
+                    <li><a href="#modern">现代英雄</a></li>
+                    <li><a href="#culture">文化传承</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="header-cta">加入社区</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>致敬民族脊梁</h1>
+                <p>探索中华文明中闪耀的英雄光辉，从神话传说到现代楷模，感受中华儿女的家国情怀与担当精神。</p>
+                <a href="#myth" class="hero-btn">开始探索</a>
+            </div>
+        </section>
+
+        <!-- Category Navigation -->
+        <div class="container">
+            <div class="section-title">
+                <h2>英雄分类</h2>
+                <p>按类别浏览不同领域的英雄人物与文化</p>
+            </div>
+            <div class="category-grid">
+                <article class="category-card">
+                    <span class="category-icon">🐉</span>
+                    <h3>神话传说</h3>
+                    <p>盘古、女娲、孙悟空等上古神祇与英雄形象，开启华夏文明的英雄史诗。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">⚔️</span>
+                    <h3>历史名将</h3>
+                    <p>岳飞、关羽、戚继光等历史人物，讲述保家卫国、精忠报国的英雄事迹。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🚀</span>
+                    <h3>现代楷模</h3>
+                    <p>钱学森、袁隆平、钟南山等科学家与时代先锋，诠释科学精神与奉献力量。</p>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🦸</span>
+                    <h3>动漫英雄</h3>
+                    <p>国产动漫中的热血角色，传递正义、勇气与友情的精神内核。</p>
+                </article>
+            </div>
+        </div>
+
+        <!-- Spotlight Feature -->
+        <section class="container">
+            <div class="spotlight-section">
+                <div class="spotlight-image">
+                    <img src="https://picsum.photos/seed/hero_china_hero/600/400.jpg" alt="中国神话英雄形象">
+                </div>
+                <div class="spotlight-content">
+                    <span class="spotlight-tag">本期推荐</span>
+                    <h2>精卫填海：坚韧不拔的民族精神</h2>
+                    <p>精卫填海是中国上古神话中最为动人的传说之一。传说炎帝的女儿女娃在东海游玩时不幸溺水，死后化为精卫鸟。她心怀不甘，发誓要将东海填平，以绝后患。这一故事不仅是关于勇气与执着的寓言，更象征着中华民族面对困难时永不言弃、坚韧不拔的精神特质。</p>
+                    <div class="spotlight-stats">
+                        <div class="stat-item">
+                            <strong>5000+</strong>
+                            <span>流传年代</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>经典</strong>
+                            <span>神话地位</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>坚韧</strong>
+                            <span>精神象征</span>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link">阅读更多神话故事 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <section class="container">
+            <div class="section-title">
+                <h2>英雄文化解读</h2>
+                <p>深度解析英雄背后的历史背景与文化意义</p>
+            </div>
+            <div class="content-grid">
+                <article class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/hero_history/400/300.jpg" alt="岳飞画像">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-meta">历史名将</div>
+                        <h3 class="feature-title">岳飞：精忠报国的千古忠魂</h3>
+                        <p class="feature-desc">岳飞是南宋时期的抗金名将，他率领的岳家军纪律严明，所向披靡。其"精忠报国"的事迹与《满江红》词作，成为了中华民族爱国主义精神的象征。</p>
+                        <a href="#" class="feature-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/hero_science/400/300.jpg" alt="科研工作者">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-meta">现代楷模</div>
+                        <h3 class="feature-title">两弹一星元勋：隐姓埋名的英雄</h3>
+                        <p class="feature-desc">在建国初期，无数科学家放弃国外优渥条件，回国投身国防建设。他们隐姓埋名，在戈壁荒漠中研制出原子弹和氢弹，铸就了大国重器。</p>
+                        <a href="#" class="feature-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/hero_cartoon/400/300.jpg" alt="动漫英雄">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-meta">动漫文化</div>
+                        <h3 class="feature-title">国产动漫中的英雄主义叙事</h3>
+                        <p class="feature-desc">从《哪吒之魔童降世》到《雄狮少年》，国产动漫正在崛起。这些作品通过现代视角重新诠释传统英雄故事，传递出关于成长、自我认同与守护的普世价值。</p>
+                        <a href="#" class="feature-link">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <blockquote>
+                "英雄者，国之干，族之魂。"
+            </blockquote>
+            <cite>—— 历史学家</cite>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">什么是"国产大英雄"的核心理念？</div>
+                    <div class="faq-answer">
+                        "国产大英雄"的核心理念是弘扬中华优秀传统文化与爱国主义精神。它不仅包括历史上的名将伟人，也涵盖神话传说、现代科学家以及文艺作品中的正面形象，旨在树立可敬、可亲、可学的榜样。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何区分神话英雄与历史人物？</div>
+                    <div class="faq-answer">
+                        神话英雄（如孙悟空、哪吒）通常存在于古代神话传说中，具有超自然能力，往往带有象征意义；而历史英雄（如岳飞、文天祥）则是真实存在的历史人物，他们的行为和成就有史籍可查，是民族精神的真实载体。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">现代英雄的评选标准是什么？</div>
+                    <div class="faq-answer">
+                        现代英雄的评选侧重于在科技、国防、教育、医疗等各个领域为国家和社会做出重大贡献，或者在平凡岗位上通过无私奉献、见义勇为展现高尚品德的人士。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p>致力于传播中国英雄文化，弘扬正能量，让更多人了解中华儿女的奋斗历程与精神世界。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">神话传说</a></li>
+                    <li><a href="#">历史名将</a></li>
+                    <li><a href="#">现代楷模</a></li>
+                    <li><a href="#">动漫英雄</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关资源</h4>
+                <ul>
+                    <li><a href="#">文化典籍</a></li>
+                    <li><a href="#">历史文献</a></li>
+                    <li><a href="#">影视作品</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱: contact@china-heroes.com</li>
+                    <li>地址: 中国·北京</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 国产大英雄专题站 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
