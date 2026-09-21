@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老司机-汽车生活指南与驾驶技巧分享</title>
+    <meta name="description" content="老司机汽车生活指南，提供汽车保养知识、驾驶技巧、自驾游攻略及车辆选购建议，助您成为真正的老司机。">
+    <meta name="keywords" content="老司机,汽车保养,驾驶技巧,自驾游,用车知识">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #2c3e50;
+            --accent-color: #f1c40f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* 核心栏目 */
+        .section-title {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* 侧边栏布局 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* 侧边栏 */
+        aside .widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #ff4757; }
+        .rank-list li:nth-child(2) .rank-num { background: #ffa502; }
+        .rank-list li:nth-child(3) .rank-num { background: #2ed573; }
+
+        .rank-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--secondary-color);
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🚗</span> 老司机生活
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">驾驶技巧</a></li>
+                    <li><a href="#">车辆保养</a></li>
+                    <li><a href="#">自驾游</a></li>
+                    <li><a href="#">汽车资讯</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索用车知识...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>成为真正的老司机</h1>
+            <p>汇聚全网优质汽车驾驶技巧、车辆养护经验与自驾游攻略，助您安全、经济、从容地驾驭爱车。</p>
+            <div class="hero-tags">
+                <span class="tag">新手避坑指南</span>
+                <span class="tag">省油秘籍</span>
+                <span class="tag">冬季用车</span>
+                <span class="tag">自驾装备</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-content">
+            <!-- 左侧主要内容 -->
+            <section class="content-area">
+                
+                <div class="section-title">
+                    <span>新手必修课</span>
+                    <a href="#">查看更多 ></a>
+                </div>
+
+                <div class="grid-layout">
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">技巧</span>
+                            <img src="https://picsum.photos/seed/car1/400/250" alt="停车技巧">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">新手必看：侧方停车与倒车入库的黄金口诀</a></h3>
+                            <p class="card-excerpt">掌握这些技巧，告别停车难。本文详解倒车雷达使用与后视镜调整的最佳角度...</p>
+                            <div class="card-meta">
+                                <span>2023-10-24</span>
+                                <span>1.2w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">安全</span>
+                            <img src="https://picsum.photos/seed/car2/400/250" alt="高速驾驶">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">老司机的经验：高速行驶时的三点保命法则</a></h3>
+                            <p class="card-excerpt">保持车距、控制车速、注意视线盲区。这三点在高速上比任何辅助驾驶都重要。</p>
+                            <div class="card-meta">
+                                <span>2023-10-22</span>
+                                <span>8.5k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">用车</span>
+                            <img src="https://picsum.photos/seed/car3/400/250" alt="省油">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">如何让爱车更省油？老司机都在用的驾驶习惯</a></h3>
+                            <p class="card-excerpt">急加速和急刹车是油耗杀手。平稳驾驶不仅能省油，还能延长发动机寿命。</p>
+                            <div class="card-meta">
+                                <span>2023-10-20</span>
+                                <span>2.1w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">避坑</span>
+                            <img src="https://picsum.photos/seed/car4/400/250" alt="4S店">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">4S店里的“潜规则”：哪些保养项目是智商税？</a></h3>
+                            <p class="card-excerpt">作为老司机，一定要学会自己判断。揭秘几项不必要的高额保养项目。</p>
+                            <div class="card-meta">
+                                <span>2023-10-18</span>
+                                <span>3.4w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-title" style="margin-top: 40px;">
+                    <span>热门自驾游路线</span>
+                    <a href="#">查看更多 ></a>
+                </div>
+
+                <div class="grid-layout">
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">旅行</span>
+                            <img src="https://picsum.photos/seed/road/400/250" alt="川藏线">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">川藏线G318：一生必驾的朝圣之路</a></h3>
+                            <p class="card-excerpt">沿途风景绝美，但路况复杂。这份详细的进藏攻略请收好，包含路线规划与高反预防。</p>
+                            <div class="card-meta">
+                                <span>2023-10-15</span>
+                                <span>5.6k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="card-badge">旅行</span>
+                            <img src="https://picsum.photos/seed/land/400/250" alt="西北大环线">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="#">青海甘肃大环线：7天6晚的极致风光</a></h3>
+                            <p class="card-excerpt">青海湖、茶卡盐湖、莫高窟。这条环线涵盖了西北最精华的景点，适合家庭出游。</p>
+                            <div class="card-meta">
+                                <span>2023-10-12</span>
+                                <span>4.2k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </section>
+
+            <!-- 右侧侧边栏 -->
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">🔥 老司机热榜</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <span class="rank-title">汽车保养：机油到底多久换一次才最科学？</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <span class="rank-title">雨天行车：雾灯到底什么时候开？</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <span class="rank-title">车险改革后，这三项必须买！</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-title">高速爆胎瞬间如何操作保命？</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-title">车内异味去除小妙招</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">📅 每日签到</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">连续签到领取专属驾驶技巧电子书</p>
+                    <button style="width: 100%; padding: 10px; background: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">立即签到</button>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">🏷️ 热门标签</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">自动挡</a>
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">手动挡</a>
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">新能源汽车</a>
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">冬季热车</a>
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">胎压监测</a>
+                        <a href="#" class="tag" style="background: #eee; color: #333; border: none;">违章查询</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="faq-section">
+            <div class="section-title" style="margin-bottom: 20px; border: none; padding: 0;">
+                <span>❓ 常见问题解答</span>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>什么是“老司机”？在汽车领域指什么？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    在汽车领域，“老司机”通常指驾驶经验丰富、技术娴熟、对车辆性能和路况有深刻理解的驾驶员。他们通常具备处理突发状况的能力，并能提供实用的用车建议。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>新手如何快速提升驾驶技术？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    建议多在空旷路段练习倒车入库和侧方停车，熟悉车辆刹车和油门的力度。同时，阅读关于交通规则和安全驾驶的文章，养成遵守交规的好习惯，这是成为老司机的基础。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>老司机的用车习惯有哪些？</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    老司机通常注重车辆的定期保养，会根据季节和路况选择合适的机油和轮胎。他们驾驶平稳，极少急刹车，且善于利用车辆的各项辅助功能来提升安全性和舒适性。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于老司机</h4>
+                    <p style="font-size: 13px; line-height: 1.8;">
+                        我们致力于为车主提供最实用、最专业的汽车知识分享平台。从驾驶技巧到车辆保养，从自驾攻略到安全提示，助您轻松驾驭爱车，享受驾驶乐趣。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">驾驶技巧</a></li>
+                        <li><a href="#">汽车保养</a></li>
+                        <li><a href="#">自驾游攻略</a></li>
+                        <li><a href="#">车险知识</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>合作邮箱：contact@laosiji.com</li>
+                        <li>用户反馈：feedback@laosiji.com</li>
+                        <li>地址：中国某市某区某街道123号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 老司机生活指南 版权所有 | 本站内容仅供参考，请以实际操作为准</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // 简单的FAQ交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
